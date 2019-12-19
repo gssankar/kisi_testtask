@@ -1,6 +1,6 @@
 # README
 
-This is develop branch. 
+This is d/activejob-sidekiq branch. 
 
 
 This README would normally document whatever steps are necessary to get the
