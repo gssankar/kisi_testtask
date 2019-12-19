@@ -1,0 +1,20 @@
+runtime: ruby
+env: flex
+service: worker
+
+entrypoint: bundle exec activejob-google_cloud_pubsub-worker
+
+env_variables:
+  SECRET_KEY_BASE: Rails.application.credentials.secret_key_base
+
+health_check:
+  enable_health_check: False
+
+# Optional scaling configuration
+manual_scaling:
+  instances: 1
+
+
+
+    
+
