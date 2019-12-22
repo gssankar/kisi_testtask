@@ -1,6 +1,19 @@
 <h1>Kisi Backend Challenge</h1>
-<p>Build a background job system to use with Rails based on Google Pub Sub</p>
+<p style="font-size:120%;">Build a background job system to use with Rails based on Google Pub Sub</p>
+<p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
+Background workers dequeue job params and execute the corresponding jobs <br>
+If a job fails, it should be retried at most two times at least five minutes apart <br>
+Use ActiveSupport::Instrumentation to collect simple metrics
+</p>
 
-<%= link_to "Github", "https://github.com/gssankar/kisi_testtask", :target => "_blank" %>
 
+
+<div class="buttons-coll">
+  <button class="custom-btn btn-1">Execute Job</button>
+  <a href="https://github.com/gssankar/kisi_testtask" target="_blank" ><button class="custom-btn btn-2">Source Code</button></a>
+  <button class="custom-btn btn-3">View Metrics</button>
+</div>
+
+
+<!-- # <%= link_to "Github", "https://github.com/gssankar/kisi_testtask", :target => "_blank" %> -->
 
