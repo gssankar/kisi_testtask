@@ -64,4 +64,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activejob-google_cloud_pubsub'
 
+gem 'sidekiq'
+
+gem 'irb', require: false
+
+
+
 
