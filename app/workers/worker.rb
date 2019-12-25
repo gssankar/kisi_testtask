@@ -1,42 +1,38 @@
-# We require sidekiq, obviously.
 require 'sidekiq'
-
-# # We'll configure the Sidekiq client to connect to Redis using a custom
-# # DB - this way we can run multiple apps on the same Redis without them
-# # stepping on each other
-
-# Sidekiq.configure_client do |config|
-#   config.redis = { db: 1 }
-# end
-
-# # We'll  configure the Sidekiq server as well
-
-# Sidekiq.configure_server do |config|
-#   config.redis = { db: 1 }
-# end
-
-# # ---------------------------------------------
-
 
 class Worker
 	include Sidekiq::Worker
-	# sidekiq_options retry: false
-	sidekiq_options retry: 2 # Only two retries and then to the Dead Job Queue
+
+	# If a job fails, it should be retried at most two times at least five minutes apart
+	# 3 tries in total 
+	sidekiq_options :queue => :default, retry: 2
+	sidekiq_retry_in do |count|
+		300
+	end
+
+	# If the second retry fails, enqueue the job to a morgue queue 
+	# q_from = "default"
+	# q_to = "morgue"
+	# count_block = proc { Sidekiq.redis do |conn|
+	# 	conn.llen("queue:#{q_from}")
+	# 	end }
+
+	# while count_block.call > 0 
+	# 	Sidekiq.redis do |conn| 
+	# 		conn.rpoplpush "queue:#{q_from}", "queue:#{q_to}" 
+	# 	end
+	# end
 
 	def perform(complexity) 
 		case complexity 
-		when "super_hard" 
+		when "hard" 
 			sleep 10 
 			puts "Really took a quite bit of effort"
-		when "hard"
-			sleep 5
-			puts "That was a bit of work"
-		when
-			sleep 1 
-			puts "That wasn't a lot of effort"
-		else 
+		when "easy"
 			sleep 1
-			puts "Not in worker schema"
+			puts "That wasn't a lot of effort"
+		else
+			raise "Invalid Value"
 		end
 	end
 end
