@@ -5,7 +5,7 @@ class Worker
 
 	# If a job fails, it should be retried at most two times at least five minutes apart
 	# 3 tries in total 
-	sidekiq_options :queue => :default, retry: 2
+	sidekiq_options :queue => :default, retry: 0
 	sidekiq_retry_in do |count|
 		300
 	end
@@ -36,5 +36,8 @@ class Worker
 		end
 	end
 end
+
+
+
 
 

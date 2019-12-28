@@ -68,6 +68,6 @@ gem 'sidekiq'
 
 gem 'irb', require: false
 
-
+gem 'foreman'
 
 

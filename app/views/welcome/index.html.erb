@@ -1,26 +1,45 @@
 <h1>Kisi Backend Challenge</h1>
-<p style="font-size:120%;">Build a background job system to use with Rails based on Google Pub Sub</p>
-<p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
+<p style="font-size:150%; text-align: center;">Build a background job system to use with Rails based on Google Pub Sub</p>
+<!-- <p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
 Background workers dequeue job params and execute the corresponding jobs <br>
 If a job fails, it should be retried at most two times at least five minutes apart <br>
 Use ActiveSupport::Instrumentation to collect simple metrics
-</p>
+</p> -->
+
+
+<!-- <%= "Message from controller: #{@controller_message}" %> -->
+
+<p style="font-size:90%; text-align: center;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
+Background workers dequeue job params and execute the corresponding jobs <br>
+If a job fails, it should be retried at most two times at least five minutes apart <br>
+Use ActiveSupport::Instrumentation to collect simple metrics
+</p> 
+
+<!-- <div class="row">
+
+  <div class="column"> <p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
+Background workers dequeue job params and execute the corresponding jobs <br>
+If a job fails, it should be retried at most two times at least five minutes apart <br>
+Use ActiveSupport::Instrumentation to collect simple metrics
+</p> </div>
+
+  <div class="column"> <p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
+Background workers dequeue job params and execute the corresponding jobs <br>
+If a job fails, it should be retried at most two times at least five minutes apart <br>
+Use ActiveSupport::Instrumentation to collect simple metrics
+</p></div>
+ -->
+<!-- </div> -->
+
 
 
 
 <div class="buttons-coll">
-  <a href="job" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Execute Job</button></a>
+  <a href="welcome" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Execute Job</button></a>
   <a href="https://github.com/gssankar/kisi_testtask" target="_blank" ><button class="custom-btn btn-2">Source Code</button></a>
-  <button class="custom-btn btn-3">View Metrics</button>
-  <a href="" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-3">Email Job</button></a>
+  <button class="custom-btn btn-2">View Metrics</button>
+  <a href="something...." style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-2">Email Job</button></a>
+  <a href="http://localhost:3000/sidekiq" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Sidekiq Dashboard</button></a>
 </div>
-
-
-
-
-<!-- <button class="custom-btn btn-1">Execute Job</button> -->
-<!-- # <%= link_to "Execute Jobs", job_path, :class => 'btn btn-primary'%> -->
-<!-- # <%= link_to "Github", "https://github.com/gssankar/kisi_testtask", :target => "_blank" %> -->
-<!-- <a onclick="location.href='@Url.Action("job_path")"><button class="custom-btn btn-1">Execute Job</button></a> -->
 
 
