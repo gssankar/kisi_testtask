@@ -1,10 +1,15 @@
 runtime: ruby
 env: flex
-# entrypoint: bundle exec foreman start
+
+# entrypoint: bundle exec foreman start --formation "$FORMATION"
+
+
 # entrypoint: bundle exec rails server -p 8080
 # PUBSUB_EMULATOR_HOST=localhost:8085
 env_variables:
   SECRET_KEY_BASE: Rails.application.credentials.secret_key_base
+  # FORMATION: web=1
+
 
 
 
