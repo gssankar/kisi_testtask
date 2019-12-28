@@ -71,3 +71,11 @@ gem 'irb', require: false
 gem 'foreman'
 
 
+
+###### Below files are part of Pub/sub 
+gem "google-cloud-pubsub"
+gem "json"
+gem "sinatra"
+gem "slim"
+
+
