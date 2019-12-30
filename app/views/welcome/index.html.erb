@@ -1,45 +1,48 @@
+
 <h1>Kisi Backend Challenge</h1>
-<p style="font-size:150%; text-align: center;">Build a background job system to use with Rails based on Google Pub Sub</p>
-<!-- <p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
-Background workers dequeue job params and execute the corresponding jobs <br>
-If a job fails, it should be retried at most two times at least five minutes apart <br>
-Use ActiveSupport::Instrumentation to collect simple metrics
-</p> -->
 
+<p style="font-size:150%;">Build a background job system to use with Rails based on Google Pub Sub</p>
 
-<!-- <%= "Message from controller: #{@controller_message}" %> -->
-
-<p style="font-size:90%; text-align: center;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
+<p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
 Background workers dequeue job params and execute the corresponding jobs <br>
 If a job fails, it should be retried at most two times at least five minutes apart <br>
 Use ActiveSupport::Instrumentation to collect simple metrics
 </p> 
 
+
+<!-- <%= "Message from controller: #{@controller_message}" %> -->
 <!-- <div class="row">
-
-  <div class="column"> <p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
-Background workers dequeue job params and execute the corresponding jobs <br>
-If a job fails, it should be retried at most two times at least five minutes apart <br>
-Use ActiveSupport::Instrumentation to collect simple metrics
-</p> </div>
-
-  <div class="column"> <p style="font-size:90%;">Transparent enqueueing with ActiveJob to Google Pub Sub <br>
-Background workers dequeue job params and execute the corresponding jobs <br>
-If a job fails, it should be retried at most two times at least five minutes apart <br>
-Use ActiveSupport::Instrumentation to collect simple metrics
-</p></div>
- -->
-<!-- </div> -->
-
-
+  <div class="column"> <p style="font-size:90%;">Lorem Ipsum</p> </div>
+  <div class="column"> <p style="font-size:90%;">Lorem Ipsum</p> </div>
+</div> -->
 
 
 <div class="buttons-coll">
-  <a href="welcome" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Execute Job</button></a>
-  <a href="https://github.com/gssankar/kisi_testtask" target="_blank" ><button class="custom-btn btn-2">Source Code</button></a>
-  <button class="custom-btn btn-2">View Metrics</button>
-  <a href="something...." style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-2">Email Job</button></a>
-  <a href="http://localhost:3000/sidekiq" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Sidekiq Dashboard</button></a>
+
+	<!-- General Functionalities -->
+  	<a href="https://github.com/gssankar/kisi_testtask" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Source Code</button></a> <br>
+    <a href="https://insights.eu.newrelic.com/accounts/2575657/dashboards/8932" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">View Metrics</button></a><br>
+  	<a href="http://localhost:3000/sidekiq" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Sidekiq Dashboard</button></a><br>
+
+
+
+   	<!-- Pubsub Functinalities -->
+   	<a href="welcome/publishmessage" style='text-decoration:none;'><button class="custom-btn btn-2">Publish Message</button></a>
+  	<a href="welcome" style='text-decoration:none;'><button class="custom-btn btn-2">Create Subscription</button></a>
+  	<a href="welcome/startworker" style='text-decoration:none;'><button class="custom-btn btn-2">Start Worker</button></a>
+
 </div>
+
+
+<div id="flash-message">
+<% flash.each do |key, value| %>
+      <p style='color: #279900; font-size: 110%'class="<%= flash_class(key) %>">
+            <%= value %>
+            <a href="#" style='text-decoration:none; text-align: center;' data-dismiss="alert" class="close">×</a>
+      </p>
+<% end %>
+</div> 
+
+
 
 

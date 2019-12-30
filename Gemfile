@@ -79,3 +79,9 @@ gem "sinatra"
 gem "slim"
 
 
+gem 'bootstrap'
+
+gem 'newrelic_rpm'
+
+
+
