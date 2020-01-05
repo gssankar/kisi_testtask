@@ -8,7 +8,7 @@ body {background: #f2f2f2;}
 h1 {
 position: relative;
 text-align: center;
-color: #353535;
+color: #353535; 
 font-size: 50px;
 font-family: 'Helvetica', serif;
 }
@@ -36,6 +36,13 @@ margin-left: auto;
 margin-right: auto;
 }
 
+
+legend {
+font-family: 'Helvetica', serif;
+font-weight: 300;
+text-align: left;
+color: #676767;
+}
 
 
 
@@ -68,7 +75,7 @@ display: inline-block;
 border: none;
 border-bottom: 2px solid #000;
 border-left: 2px solid #000;
- display:block;
+ display:inline-block;
   margin: 0 auto;
 }
 .btn-1:before, .btn-1:after {

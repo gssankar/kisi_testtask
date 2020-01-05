@@ -3,11 +3,25 @@ require 'sidekiq'
 class Worker
 	include Sidekiq::Worker
 
-	# If a job fails, it should be retried at most two times at least five minutes apart
-	# 3 tries in total 
-	sidekiq_options :queue => :default, retry: 0
+	# 3. If a job fails, it should be retried at most two times at least five minutes apart (three tries in total, morgue queue)
+	sidekiq_options :queue => :default, retry: 2
 	sidekiq_retry_in do |count|
 		300
+	end
+
+	# 2. Background workers dequeue job params and execute the corresponding jobs
+	def perform(complexity) 
+		case complexity 
+		when "hard" 
+			sleep 5
+			puts "Really took a quite bit of effort"
+		when "easy"
+			sleep 1
+			puts "That wasn't a lot of effort"
+			fork { exec("gcloud pubsub subscriptions pull --auto-ack kisi_pro") }
+		else
+			raise "Invalid Value"
+		end
 	end
 
 	# If the second retry fails, enqueue the job to a morgue queue 
@@ -22,22 +36,4 @@ class Worker
 	# 		conn.rpoplpush "queue:#{q_from}", "queue:#{q_to}" 
 	# 	end
 	# end
-
-	def perform(complexity) 
-		case complexity 
-		when "hard" 
-			sleep 10 
-			puts "Really took a quite bit of effort"
-		when "easy"
-			sleep 1
-			puts "That wasn't a lot of effort"
-		else
-			raise "Invalid Value"
-		end
-	end
 end
-
-
-
-
-

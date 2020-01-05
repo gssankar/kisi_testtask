@@ -11,6 +11,7 @@ pubsub = Google::Cloud::Pubsub.new
 # [START gae_flex_pubsub_env]
 topic = pubsub.topic ENV["PUBSUB_TOPIC"]
 PUBSUB_VERIFICATION_TOKEN = ENV["PUBSUB_VERIFICATION_TOKEN"]
+# export GOOGLE_APPLICATION_CREDENTIALS=/Users/GokulSreram/Downloads/k-project-262422-c2d00007856f.json
 # [END gae_flex_pubsub_env]
 
 
@@ -59,6 +60,9 @@ end
 
 __END__
 
+
+
+
 @@index
 doctype html
 html
@@ -69,11 +73,7 @@ html
     ul
       - @messages.each do |message|
         li = message
-    p
-      small
-        | Note: because your application is likely running multiple instances,
-        | each instance will have a different list of messages.
 
     form method="post" action="publish"
-      textarea name="payload" placeholder="Enter message here."
-      input type="submit" value="Send"
+      textarea name="payload" placeholder="Enter message here"
+      input type="submit" value="Publish" 
