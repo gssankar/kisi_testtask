@@ -1,0 +1,32 @@
+
+<h1>Kisi Backend Challenge</h1>
+
+<p style="font-size:120%;">Build a background job system to use with Rails based on Google Pub Sub</p>
+
+<p style="font-size:75%;">(Refer the GitHub page for instructions)</p> 
+
+<div class="buttons-coll">
+
+   	<!-- Pub/Sub Functionalities -->
+   	<a href="welcome/publish_message" style='text-decoration:none;'><button class="custom-btn btn-2">Publish Message</button></a>
+  	<a href="welcome" style='text-decoration:none;'><button class="custom-btn btn-2">Create Subscription</button></a>
+  	<a href="welcome/start_worker" style='text-decoration:none;'><button class="custom-btn btn-2">Start Worker</button></a><br>
+
+
+      <!-- General Functionalities -->
+    <a href="http://localhost:3000/sidekiq" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Worker Metrics</button></a><br><br>
+    <a href="https://insights.eu.newrelic.com/accounts/2575657/dashboards/8932" style='text-decoration:none;' target="_blank" ><button class="custom-btn btn-1">Newrelic Metrics</button></a><br><br>
+    <a href="https://github.com/gssankar/kisi_testtask" style='text-decoration:none; ' target="_blank" ><button class="custom-btn btn-1">GitHub</button></a> <br> 
+
+</div>
+
+
+<div id="flash-message">
+<% flash.each do |key, value| %>
+      <p style='color: #279900; font-size: 110%'class="<%= flash_class(key) %>">
+            <%= value %>
+            <a href="#" style='text-decoration:none; text-align: center;' data-dismiss="alert" class="close">×</a>
+      </p>
+<% end %>
+</div> 
+

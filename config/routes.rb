@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
-  get '/hello/:name', to: 'hello#say'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+	root 'welcome#index'
+
+	get 'welcome', to: 'welcome#subscription'
+	get 'welcome/publish_message', to: 'welcome#publish_message'
+	get 'welcome/start_worker', to: 'welcome#start_worker'
+
+	get '/hello/:name', to: 'hello#say'
+
+	require 'sidekiq/web'
+	mount Sidekiq::Web => "/sidekiq"
+	
 end

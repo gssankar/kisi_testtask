@@ -64,4 +64,24 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activejob-google_cloud_pubsub'
 
+gem 'sidekiq'
+
+gem 'irb', require: false
+
+gem 'foreman'
+
+
+
+###### Below files are part of Pub/sub 
+gem "google-cloud-pubsub"
+gem "json"
+gem "sinatra"
+gem "slim"
+
+
+gem 'bootstrap'
+
+gem 'newrelic_rpm'
+
+
 

@@ -1,33 +1,27 @@
-# SETUP: Active Job & Cloud Pub/sub 
-
-# Seperate Worker and Application 
-
 runtime: ruby
 env: flex
 
-entrypoint: bundle exec rails server -p 8080
+# entrypoint: bundle exec foreman start --formation "$FORMATION"
 
+
+# entrypoint: bundle exec rails server -p 8080
+# PUBSUB_EMULATOR_HOST=localhost:8085
 env_variables:
   SECRET_KEY_BASE: Rails.application.credentials.secret_key_base
+  # FORMATION: web=1
 
 
 
 
-# Shared Worker and Application 
-
-# runtime: ruby
-# env: flex
-
-# entrypoint: bundle exec foreman start
-
-# env_variables:
-#   REDIS_PROVIDER: REDIS_URL
-#   REDIS_URL: redis://[REDIS_IP_ADDRESS]:6379
-#   SECRET_KEY_BASE: 
 
 
-
-
-# 1. With ActiveJob and Cloud Pub/Sub
-# 2. With ActiveJob and Sidekiq
-
+###### Below files are part of Pub/sub 
+entrypoint: bundle exec ruby app.rb
+instance_class: F2
+# [START gae_pubsub_yaml]
+env_variables:
+    PUBSUB_TOPIC: ENV["PUBSUB_TOPIC"]
+    # This token is used to verify that requests originate from your
+    # application. It can be any sufficiently random string.
+    PUBSUB_VERIFICATION_TOKEN: ENV["PUBSUB_VERIFICATION_TOKEN"]
+# [END gae_pubsub_yaml]
