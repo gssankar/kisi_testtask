@@ -129,6 +129,6 @@ Prior to this I didn't have much exposure on RoR or GCP. I learnt a lot on this 
 - ActiveJob interface with Sidekiq 
 - ActiveJob interface with Google pub/sub 
 
-As much as I've enjoyed working on this, I do realize there is room for improvements, so I'd like to hear your feedback.
+As much as I enjoyed working on this, I do realize there is lot of room for improvements, so I'd like to hear your feedback.
 
 
