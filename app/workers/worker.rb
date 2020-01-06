@@ -15,7 +15,7 @@ class Worker
 		when "pull"
 			sleep 1
 			puts "Message being pulled from Google Cloud Pub/Sub"
-			fork { exec("gcloud pubsub subscriptions pull --auto-ack kisi_pro") }
+			fork { exec("gcloud pubsub subscriptions pull --auto-ack kisi_pro1") }
 		else
 			raise "Invalid Value"
 		end
