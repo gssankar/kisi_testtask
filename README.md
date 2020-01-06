@@ -59,7 +59,7 @@ Verify the project id and account, using `gcloud config list`
 
 ### Deployment     
 
-Run `rails server` and the UI should be dispalyed on localhost:3000](http://localhost:3000/)
+Run `rails server` and the UI should be dispalyed on [localhost:3000](http://localhost:3000/)
 
 
 
@@ -113,7 +113,7 @@ For the sake of implementation, the worker is modelled to take in a simple case 
 
 ### Clean Up 
 
-Command/ctrl + c will halt the running processes.  
+`Command`/`ctrl` + `c` will halt the running processes.  
 
 
 
@@ -129,6 +129,6 @@ Prior to this I didn't have much exposure on RoR or GCP. I learnt a lot on this 
 - ActiveJob interface with Sidekiq 
 - ActiveJob interface with Google pub/sub 
 
-As much as I've enjoyed working on this, I do realize there is room for improvements, so I'd like to hear your feedback. 
+As much as I've enjoyed working on this, I do realize there is room for improvements, so I'd like to hear your feedback.
 
 
