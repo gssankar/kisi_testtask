@@ -90,8 +90,7 @@ A simple kisi software subscription model is considered for this challenge. A pu
 ### Implementation Sequence 
 
 1. **Publish Message:** Send message to the topic <br>
-(This could also be done via Google Cloud Console) 
-(visit on http://localhost:4567/) 
+Open [localhost:4567](http://localhost:4567/) in a *new tab* to send message. This could also be done directly via Google Cloud Console. 
 
 2. **Create Subscription:** Creates a new subscription (kisi_pro1). <br> 
 Once the subscription is created, messages published to the topic are queued (when worker isnt online)<br>
@@ -108,9 +107,9 @@ The retry mechanism is configured with `sidekiq:options` (three retries in total
 
 ### Metrics
 
-**Job Dashboard:** 			Sidekiq (Job count, processed, duration, etc). Sidekiq’s API provides real-time information about worker, queues and jobs 
+**Job Dashboard:** 			Sidekiq (Job count, processed, duration, etc). Sidekiq’s API provides real-time information about worker, queues and jobs. 
 
-**View Metrics:** 			New relick metrics (error code, etc)
+**View Metrics:** 			Newrelick metrics (error code, etc). 
 
 
 
@@ -124,15 +123,15 @@ Command/ctrl+c will stop all the running processes
 
 ## Notes   
 
-Prior to this I didnt have much exposure on ruby or gcp, so I had to focus on the fundamentals. I learnt a ton on this assignment, most of it extremely basic. Below are some concepts that I explored: 
+Prior to this I didnt have much exposure on RoR or GCP, so I had to focus on the fundamentals. I learnt a ton on this assignment, most of it extremely basic. Below are some concepts that I explored: 
 
-- Python pub/sub approach in GCP tutorial, that uses virtual environment
+- Python pub/sub approach in GCP, that uses virtual environment
 - Action mailer
 - AppEngine deployment (flex)
 - ActiveJob interface with Sidekiq 
-- ActiveJob interface with google pub/sub 
+- ActiveJob interface with Google pub/sub 
 
-I do realize there is room for lot of improvements to the implemented. But I'd like to hear your feedback on this, as I 've enjoyed working on this.
+As much I've enjoyed working on this, I do realize there is so much room for improvements and I'd like to hear your feedback. 
 
 
 

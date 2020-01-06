@@ -3,15 +3,12 @@ Rails.application.routes.draw do
 	root 'welcome#index'
 
 	get 'welcome', to: 'welcome#subscription'
-	get 'welcome/publishmessage', to: 'welcome#publishmessage'
-	get 'welcome/startworker', to: 'welcome#startworker'
-
+	get 'welcome/publish_message', to: 'welcome#publish_message'
+	get 'welcome/start_worker', to: 'welcome#start_worker'
 
 	get '/hello/:name', to: 'hello#say'
-	# match ':controller(/:action(/:id))', :via => :get 
-
-	# require "google/cloud/pubsub"
 
 	require 'sidekiq/web'
 	mount Sidekiq::Web => "/sidekiq"
+	
 end

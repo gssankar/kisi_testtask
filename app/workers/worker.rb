@@ -10,30 +10,15 @@ class Worker
 	end
 
 	# 2. Background workers dequeue job params and execute the corresponding jobs
-	def perform(complexity) 
-		case complexity 
-		when "hard" 
-			sleep 5
-			puts "Really took a quite bit of effort"
-		when "easy"
+	def perform(params) 
+		case params 
+		when "pull"
 			sleep 1
-			puts "That wasn't a lot of effort"
+			puts "Message being pulled from Google Cloud Pub/Sub"
 			fork { exec("gcloud pubsub subscriptions pull --auto-ack kisi_pro") }
 		else
 			raise "Invalid Value"
 		end
 	end
 
-	# If the second retry fails, enqueue the job to a morgue queue 
-	# q_from = "default"
-	# q_to = "morgue"
-	# count_block = proc { Sidekiq.redis do |conn|
-	# 	conn.llen("queue:#{q_from}")
-	# 	end }
-
-	# while count_block.call > 0 
-	# 	Sidekiq.redis do |conn| 
-	# 		conn.rpoplpush "queue:#{q_from}", "queue:#{q_to}" 
-	# 	end
-	# end
 end

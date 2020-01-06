@@ -1,5 +1,3 @@
-###### This file is part of Pub/sub 
-
 require "sinatra"
 require "slim"
 require "json"
@@ -8,25 +6,18 @@ require "google/cloud/pubsub"
 
 pubsub = Google::Cloud::Pubsub.new
 
-# [START gae_flex_pubsub_env]
+# pubsub_env
 topic = pubsub.topic ENV["PUBSUB_TOPIC"]
 PUBSUB_VERIFICATION_TOKEN = ENV["PUBSUB_VERIFICATION_TOKEN"]
 # export GOOGLE_APPLICATION_CREDENTIALS=/Users/GokulSreram/Downloads/k-project-262422-c2d00007856f.json
-# [END gae_flex_pubsub_env]
 
 
 
-
-
-# [START gae_flex_pubsub_messages]
 # List of all messages received by this instance
 messages = []
-# [END gae_flex_pubsub_messages]
 
 
-
-
-# [START gae_flex_pubsub_index]
+# pubsub_index
 get "/" do
   @messages = messages
 
@@ -38,12 +29,11 @@ post "/publish" do
 
   redirect "/", 303
 end
-# [END gae_flex_pubsub_index]
 
 
 
 
-# [START gae_flex_pubsub_push]
+# pubsub_push
 post "/pubsub/push" do
   halt 400 if params[:token] != PUBSUB_VERIFICATION_TOKEN
 
@@ -52,22 +42,17 @@ post "/pubsub/push" do
 
   messages.push payload
 end
-# [END gae_flex_pubsub_push]
-
-
 
 
 
 __END__
 
 
-
-
 @@index
 doctype html
 html
   head
-    title Pub/Sub Ruby on Google App Engine Managed VMs
+    title Pub/Sub 
   body
     p Messages received by this instance:
     ul
