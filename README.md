@@ -121,14 +121,11 @@ For the sake of implementation, the worker is modelled to take in a simple case 
 
 ## Notes
 
-Prior to this I didn't have much exposure on RoR or GCP. I learnt a lot on this assignment, most of it extremely basic. Below are some concepts that I explored: 
+Other concepts explored in this project: 
 
 - Python pub/sub approach in GCP, that uses virtual environment
 - Action mailer
 - AppEngine deployment (flex)
 - ActiveJob interface with Sidekiq 
 - ActiveJob interface with Google pub/sub 
-
-As much as I enjoyed working on this, I do realize there is lot of room for improvements, so I'd like to hear your feedback.
-
 
